@@ -1,0 +1,76 @@
+\doxysection{Parser\+Internals\+::Parser Class Reference}
+\hypertarget{class_parser_internals_1_1_parser}{}\label{class_parser_internals_1_1_parser}\index{ParserInternals::Parser@{ParserInternals::Parser}}
+
+
+Class for \doxylink{class_parser_internals_1_1_parser}{Parser}.  
+
+
+
+
+{\ttfamily \#include $<$parser.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_parser_internals_1_1_parser_ad136c33d19839e08d7f0b2fdb8aa8662}{Parser}} (const std\+::string \&ifilename)
+\begin{DoxyCompactList}\small\item\em This is the constructor for the \doxylink{class_parser_internals_1_1_parser}{Parser} class. \end{DoxyCompactList}\item 
+\Hypertarget{class_parser_internals_1_1_parser_a13e6119d349d6b9cda60463729030524}\label{class_parser_internals_1_1_parser_a13e6119d349d6b9cda60463729030524} 
+int {\bfseries getiaddr} () const
+\item 
+\Hypertarget{class_parser_internals_1_1_parser_a7a215fc52f881e262aaba39df5540e37}\label{class_parser_internals_1_1_parser_a7a215fc52f881e262aaba39df5540e37} 
+int {\bfseries getsz\+Token} () const
+\item 
+void \mbox{\hyperlink{class_parser_internals_1_1_parser_a19079cfaf6c3bf69523de07c938ae2bb}{parse}} (std\+::array$<$ int, MAX\+\_\+\+TOKENS\+\_\+\+PER\+\_\+\+FILE $>$ \&token)
+\begin{DoxyCompactList}\small\item\em This function parses the input file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_parser_internals_1_1_parser_a9f532a0d79fdda818c3146e307ac304b}\label{class_parser_internals_1_1_parser_a9f532a0d79fdda818c3146e307ac304b} 
+int {\bfseries iaddr}
+\item 
+\Hypertarget{class_parser_internals_1_1_parser_a6e3150d1a1c189f1c599596fe140ede9}\label{class_parser_internals_1_1_parser_a6e3150d1a1c189f1c599596fe140ede9} 
+int {\bfseries sz\+Token}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for \doxylink{class_parser_internals_1_1_parser}{Parser}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_parser_internals_1_1_parser_ad136c33d19839e08d7f0b2fdb8aa8662}\label{class_parser_internals_1_1_parser_ad136c33d19839e08d7f0b2fdb8aa8662} 
+\index{ParserInternals::Parser@{ParserInternals::Parser}!Parser@{Parser}}
+\index{Parser@{Parser}!ParserInternals::Parser@{ParserInternals::Parser}}
+\doxysubsubsection{\texorpdfstring{Parser()}{Parser()}}
+{\footnotesize\ttfamily Parser\+::\+Parser (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ifilename }\end{DoxyParamCaption})}
+
+
+
+This is the constructor for the \doxylink{class_parser_internals_1_1_parser}{Parser} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ifilename} & Reference to the input file name \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_parser_internals_1_1_parser_a19079cfaf6c3bf69523de07c938ae2bb}\label{class_parser_internals_1_1_parser_a19079cfaf6c3bf69523de07c938ae2bb} 
+\index{ParserInternals::Parser@{ParserInternals::Parser}!parse@{parse}}
+\index{parse@{parse}!ParserInternals::Parser@{ParserInternals::Parser}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily void Parser\+::parse (\begin{DoxyParamCaption}\item[{std\+::array$<$ int, MAX\+\_\+\+TOKENS\+\_\+\+PER\+\_\+\+FILE $>$ \&}]{token }\end{DoxyParamCaption})}
+
+
+
+This function parses the input file. 
+
+\begin{DoxyReturn}{Returns}
+Will return the token array 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Adrian/\+Documents/git/m\+VM/src/include/parser.\+h\item 
+C\+:/\+Users/\+Adrian/\+Documents/git/m\+VM/src/parser.\+cpp\end{DoxyCompactItemize}

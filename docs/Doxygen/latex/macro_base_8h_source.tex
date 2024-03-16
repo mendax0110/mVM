@@ -1,0 +1,58 @@
+\doxysection{macro\+Base.\+h}
+\hypertarget{macro_base_8h_source}{}\label{macro_base_8h_source}\index{C:/Users/Adrian/Documents/git/mVM/src/include/macroBase.h@{C:/Users/Adrian/Documents/git/mVM/src/include/macroBase.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MACROBASE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MACROBASE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <exception>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ LOG\_EXCEPTION\_AND\_CONTINUE(message)\ \(\backslash\)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\ \ \ \ catch\ (const\ std::exception\&\ e)\ \(\backslash\)}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\ \ \ \ \{\ \(\backslash\)}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ std::cerr\ <<\ message\ <<\ std::endl;\ \(\backslash\)}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ std::cerr\ <<\ e.what()\ <<\ std::endl;\ \(\backslash\)}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ std::cerr\ <<\ "{}Exception\ caught\ at\ "{}\ <<\ \_\_FILE\_\_\ <<\ "{}:"{}\ <<\ \_\_LINE\_\_\ <<\ std::endl;\ \(\backslash\)}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\ \ \ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\ \ \ \ catch\ (...)\ \(\backslash\)}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\ \ \ \ \{\ \(\backslash\)}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ std::cerr\ <<\ message\ <<\ std::endl;\ \(\backslash\)}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ std::cerr\ <<\ "{}Exception\ caught\ at\ "{}\ <<\ \_\_FILE\_\_\ <<\ "{}:"{}\ <<\ \_\_LINE\_\_\ <<\ std::endl;\ \(\backslash\)}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\ \ \ \ \}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ LOG\_OBJECT\_AND\_CONTINUE(e)\ \(\backslash\)}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\ \ \ \ catch\ (const\ std::exception\&\ e)\ \(\backslash\)}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\ \ \ \ \{\ \(\backslash\)}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ std::cerr\ <<\ e.obj()\ <<\ std::endl;\ \(\backslash\)}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ std::cerr\ <<\ "{}Exception\ caught\ at\ "{}\ <<\ \_\_FILE\_\_\ <<\ "{}:"{}\ <<\ \_\_LINE\_\_\ <<\ std::endl;\ \(\backslash\)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\ \ \ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\ \ \ \ catch\ (...)\ \(\backslash\)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\ \ \ \ \{\ \(\backslash\)}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ std::cerr\ <<\ e.obj()\ <<\ std::endl;\ \(\backslash\)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ std::cerr\ <<\ "{}Exception\ caught\ at\ "{}\ <<\ \_\_FILE\_\_\ <<\ "{}:"{}\ <<\ \_\_LINE\_\_\ <<\ std::endl;\ \(\backslash\)}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\ \ \ \ \}}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ LOG\_EXCEPTION\_AND\_RETURN(message,\ code)\ \(\backslash\)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\ \ \ \ catch\ (const\ std::exception\&\ e)\ \(\backslash\)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\ \ \ \ \{\ \(\backslash\)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ std::cerr\ <<\ message\ <<\ std::endl;\ \(\backslash\)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ std::cerr\ <<\ e.what()\ <<\ std::endl;\ \(\backslash\)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ std::cerr\ <<\ "{}Exception\ caught\ at\ "{}\ <<\ \_\_FILE\_\_\ <<\ "{}:"{}\ <<\ \_\_LINE\_\_\ <<\ std::endl;\ \(\backslash\)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ return\ code;\ \(\backslash\)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\ \ \ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\ \ \ \ catch\ (...)\ \(\backslash\)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\ \ \ \ \{\ \(\backslash\)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ std::cerr\ <<\ message\ <<\ std::endl;\ \(\backslash\)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ std::cerr\ <<\ "{}Exception\ caught\ at\ "{}\ <<\ \_\_FILE\_\_\ <<\ "{}:"{}\ <<\ \_\_LINE\_\_\ <<\ std::endl;\ \(\backslash\)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ return\ code;\ \(\backslash\)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\ \ \ \ \}}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MACROBASE\_H}}
+
+\end{DoxyCode}

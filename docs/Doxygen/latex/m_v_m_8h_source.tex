@@ -1,0 +1,57 @@
+\doxysection{m\+VM.\+h}
+\hypertarget{m_v_m_8h_source}{}\label{m_v_m_8h_source}\index{C:/Users/Adrian/Documents/git/mVM/src/include/mVM.h@{C:/Users/Adrian/Documents/git/mVM/src/include/mVM.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MVM\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MVM\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \#include\ <iomanip>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacem_v_m}{mVM}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classm_v_m_1_1_v_m}{VM}}}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classm_v_m_1_1_v_m}{VM}}(\textcolor{keywordtype}{int}\ *\_code,\ \textcolor{keywordtype}{int}\ codeLength,\ \textcolor{keywordtype}{int}\ main,\ \textcolor{keywordtype}{int}\ dataSize,\ \textcolor{keyword}{const}\ std::string\&\ oFileName);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classm_v_m_1_1_v_m_afd22a970a44757f4b53c8c77a8fa1e71}{\string~VM}}();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classm_v_m_1_1_v_m_aa4e8c25dbdce8ad9caf06d960eff37de}{cpu}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classm_v_m_1_1_v_m_af2dc16d4a2ceed57e1a5f413e47473cd}{execute}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classm_v_m_1_1_v_m_a2f2e5239d8261646f24d53942548fbed}{dumpStack}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classm_v_m_1_1_v_m_a3436a785acde6053591030859a5e3e9c}{dumpDataMem}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classm_v_m_1_1_v_m_a33f722e9588191d3668e45bb974f0f26}{dumpCodeMem}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classm_v_m_1_1_v_m_a4d83712196a31826a516e430c4bf489d}{disassemble}}(\textcolor{keywordtype}{int}\ ip,\ \textcolor{keywordtype}{int}\ opcode);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classm_v_m_1_1_v_m_a495494f2ea0a6ec6a6f4d41070990eaf}{handleBinaryOp}}(std::function<\textcolor{keywordtype}{int}(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int})>\ op);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classm_v_m_1_1_v_m_a5b75e83031e3ed4fc67536117271c00d}{handleBrtBrf}}(\textcolor{keywordtype}{int}\ addr,\ \textcolor{keywordtype}{bool}\ cond,\ \textcolor{keywordtype}{int}\&\ ip,\ std::vector<int>\&\ stack,\ \textcolor{keywordtype}{int}\&\ sp);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classm_v_m_1_1_v_m_a3623f1aac98fb567bfbc5c92fbd73cae}{handlePrint}}(\textcolor{keywordtype}{int}\ rvalue,\ std::ofstream\&\ fout,\ std::vector<int>\&\ stack,\ \textcolor{keywordtype}{int}\&\ sp);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classm_v_m_1_1_v_m_aff6c89a7d7701b258ce54d3ea40b1174}{handleCall}}(\textcolor{keywordtype}{int}\ addr,\ \textcolor{keywordtype}{int}\ nargs,\ std::vector<int>\&\ stack,\ \textcolor{keywordtype}{int}\&\ sp,\ \textcolor{keywordtype}{int}\&\ fp,\ \textcolor{keywordtype}{int}\&\ ip,\ \textcolor{keywordtype}{int}*\ code);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classm_v_m_1_1_v_m_a2ed2a30310209515588784c4ed1fc2c7}{handleRet}}(\textcolor{keywordtype}{int}\&\ sp,\ \textcolor{keywordtype}{int}\&\ fp,\ \textcolor{keywordtype}{int}\&\ ip,\ std::vector<int>\&\ stack,\ \textcolor{keywordtype}{int}\ nargs);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classm_v_m_1_1_v_m_aac40da27199c5d26eb98b44306db9f48}{handleInit}}(\textcolor{keywordtype}{int}\ addr,\ \textcolor{keywordtype}{int}\ nargs,\ std::vector<int>\&\ stack,\ \textcolor{keywordtype}{int}\&\ sp,\ \textcolor{keywordtype}{int}\&\ fp,\ \textcolor{keywordtype}{int}\&\ ip);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ *code;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ std::vector<int>\ stack;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ std::vector<int>\ globals;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ip;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ sp;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ fp;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ trace;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ arraySize;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numberOfGlobals;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ std::string\ outFileName;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ std::ofstream\ fout;}
+\DoxyCodeLine{00050\ \ \ \ \ \};}
+\DoxyCodeLine{00051\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MVM\_H}}
+
+\end{DoxyCode}

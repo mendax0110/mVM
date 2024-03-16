@@ -1,0 +1,54 @@
+\doxysection{byte\+Code.\+h}
+\hypertarget{byte_code_8h_source}{}\label{byte_code_8h_source}\index{C:/Users/Adrian/Documents/git/mVM/src/include/byteCode.h@{C:/Users/Adrian/Documents/git/mVM/src/include/byteCode.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BYTECODE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BYTECODE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_byte_code_internals}{ByteCodeInternals}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ MAX\_TOKENS\_PER\_FILE\ =\ 1024;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ DEFAULT\_STACK\_SIZE\ =\ 1000;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_byte_code_internals_1_1_byte_code}{ByteCode}}}
+\DoxyCodeLine{00015\ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_byte_code_internals_1_1_byte_code}{ByteCode}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\string~ByteCode()\ =\ default;}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ NUM\_OPCODES\ =\ 20;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::array<const\ char*,\ NUM\_OPCODES>\ opName;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::array<int,\ NUM\_OPCODES>\ operands;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ OpCode\ :\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ IADD\ =\ 1,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ ISUB,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ IMUL,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ ILT,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ IEQ,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ BR,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ BRT,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ BRF,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ ICONST,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ LOAD,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ GLOAD,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ STORE,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ GSTORE,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ PRINT,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ POP,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ HALT,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ CALL,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ RET,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ INIT}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00046\ \ \ \ \ \};}
+\DoxyCodeLine{00047\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BYTECODE\_H}}
+
+\end{DoxyCode}

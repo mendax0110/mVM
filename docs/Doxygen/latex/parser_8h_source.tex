@@ -1,0 +1,43 @@
+\doxysection{parser.\+h}
+\hypertarget{parser_8h_source}{}\label{parser_8h_source}\index{C:/Users/Adrian/Documents/git/mVM/src/include/parser.h@{C:/Users/Adrian/Documents/git/mVM/src/include/parser.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PARSER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PARSER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_parser_internals}{ParserInternals}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ MAX\_TOKENS\_PER\_FILE\ =\ 1024;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_parser_internals_1_1_parser}{Parser}}}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::array<int,\ MAX\_TOKENS\_PER\_FILE>\ token;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ std::string\ infilename;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::ifstream\ fin;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ std::string\ lowercase(\textcolor{keyword}{const}\ std::string\&\ opstring);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ find(\textcolor{keyword}{const}\ std::string\&\ opstr);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setiaddr(\textcolor{keywordtype}{int}\ i)\{iaddr\ =\ i;\}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setszToken(\textcolor{keywordtype}{int}\ s)\{szToken\ =\ s;\}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_parser_internals_1_1_parser}{Parser}}(\textcolor{keyword}{const}\ std::string\&\ ifilename);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ getiaddr()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ iaddr;\}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ getszToken()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ szToken;\}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_parser_internals_1_1_parser_a19079cfaf6c3bf69523de07c938ae2bb}{parse}}(std::array<int,\ MAX\_TOKENS\_PER\_FILE>\&\ token);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ iaddr;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ szToken;\ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \};}
+\DoxyCodeLine{00037\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PARSER\_H}}
+
+\end{DoxyCode}

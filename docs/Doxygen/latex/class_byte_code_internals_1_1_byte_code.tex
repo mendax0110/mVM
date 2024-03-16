@@ -1,0 +1,91 @@
+\doxysection{Byte\+Code\+Internals\+::Byte\+Code Class Reference}
+\hypertarget{class_byte_code_internals_1_1_byte_code}{}\label{class_byte_code_internals_1_1_byte_code}\index{ByteCodeInternals::ByteCode@{ByteCodeInternals::ByteCode}}
+
+
+Class for \doxylink{class_byte_code_internals_1_1_byte_code}{Byte\+Code}.  
+
+
+
+
+{\ttfamily \#include $<$byte\+Code.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_byte_code_internals_1_1_byte_code_aaae11fed3be536190a039b9361794236}\label{class_byte_code_internals_1_1_byte_code_aaae11fed3be536190a039b9361794236} 
+enum {\bfseries Op\+Code} \+: unsigned short \{ \newline
+{\bfseries IADD} = 1
+, {\bfseries ISUB}
+, {\bfseries IMUL}
+, {\bfseries ILT}
+, \newline
+{\bfseries IEQ}
+, {\bfseries BR}
+, {\bfseries BRT}
+, {\bfseries BRF}
+, \newline
+{\bfseries ICONST}
+, {\bfseries LOAD}
+, {\bfseries GLOAD}
+, {\bfseries STORE}
+, \newline
+{\bfseries GSTORE}
+, {\bfseries PRINT}
+, {\bfseries POP}
+, {\bfseries HALT}
+, \newline
+{\bfseries CALL}
+, {\bfseries RET}
+, {\bfseries INIT}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_byte_code_internals_1_1_byte_code_afe5ad4e20d8c50d3f89052e216cfe9f8}\label{class_byte_code_internals_1_1_byte_code_afe5ad4e20d8c50d3f89052e216cfe9f8} 
+static constexpr int {\bfseries NUM\+\_\+\+OPCODES} = 20
+\item 
+static std\+::array$<$ const char \texorpdfstring{$\ast$}{*}, NUM\+\_\+\+OPCODES $>$ \mbox{\hyperlink{class_byte_code_internals_1_1_byte_code_a7e950ae94f9fa04ac2269bfe3f0ca3b2}{op\+Name}}
+\item 
+static std\+::array$<$ int, NUM\+\_\+\+OPCODES $>$ \mbox{\hyperlink{class_byte_code_internals_1_1_byte_code_a47e6b5c074c19930f3002a47f7678156}{operands}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for \doxylink{class_byte_code_internals_1_1_byte_code}{Byte\+Code}. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_byte_code_internals_1_1_byte_code_a47e6b5c074c19930f3002a47f7678156}\label{class_byte_code_internals_1_1_byte_code_a47e6b5c074c19930f3002a47f7678156} 
+\index{ByteCodeInternals::ByteCode@{ByteCodeInternals::ByteCode}!operands@{operands}}
+\index{operands@{operands}!ByteCodeInternals::ByteCode@{ByteCodeInternals::ByteCode}}
+\doxysubsubsection{\texorpdfstring{operands}{operands}}
+{\footnotesize\ttfamily array$<$ int, Byte\+Code\+::\+NUM\+\_\+\+OPCODES $>$ Byte\+Code\+::operands\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ 0,\ 0,\ 0,\ 0,\ 0,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 0,\ 0,\ 0,\ 2,\ 0,\ 0}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{class_byte_code_internals_1_1_byte_code_a7e950ae94f9fa04ac2269bfe3f0ca3b2}\label{class_byte_code_internals_1_1_byte_code_a7e950ae94f9fa04ac2269bfe3f0ca3b2} 
+\index{ByteCodeInternals::ByteCode@{ByteCodeInternals::ByteCode}!opName@{opName}}
+\index{opName@{opName}!ByteCodeInternals::ByteCode@{ByteCodeInternals::ByteCode}}
+\doxysubsubsection{\texorpdfstring{opName}{opName}}
+{\footnotesize\ttfamily array$<$ const char \texorpdfstring{$\ast$}{*}, Byte\+Code\+::\+NUM\+\_\+\+OPCODES $>$ Byte\+Code\+::op\+Name\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{nullptr},\ \textcolor{stringliteral}{"{}iadd"{}},\ \textcolor{stringliteral}{"{}isub"{}},\ \textcolor{stringliteral}{"{}imul"{}},\ \textcolor{stringliteral}{"{}ilt"{}},\ \textcolor{stringliteral}{"{}ieq"{}},\ \textcolor{stringliteral}{"{}br"{}},\ \textcolor{stringliteral}{"{}brt"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}brf"{}},\ \textcolor{stringliteral}{"{}iconst"{}},\ \textcolor{stringliteral}{"{}load"{}},\ \textcolor{stringliteral}{"{}gload"{}},\ \textcolor{stringliteral}{"{}store"{}},\ \textcolor{stringliteral}{"{}gstore"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}print"{}},\ \textcolor{stringliteral}{"{}pop"{}},\ \textcolor{stringliteral}{"{}halt"{}},\ \textcolor{stringliteral}{"{}call"{}},\ \textcolor{stringliteral}{"{}ret"{}},\ \textcolor{stringliteral}{"{}init"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Adrian/\+Documents/git/m\+VM/src/include/byte\+Code.\+h\item 
+C\+:/\+Users/\+Adrian/\+Documents/git/m\+VM/src/parser.\+cpp\end{DoxyCompactItemize}

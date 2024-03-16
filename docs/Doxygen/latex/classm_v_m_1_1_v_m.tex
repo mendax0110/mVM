@@ -1,0 +1,267 @@
+\doxysection{m\+VM\+::VM Class Reference}
+\hypertarget{classm_v_m_1_1_v_m}{}\label{classm_v_m_1_1_v_m}\index{mVM::VM@{mVM::VM}}
+
+
+Class for \doxylink{classm_v_m_1_1_v_m}{VM}.  
+
+
+
+
+{\ttfamily \#include $<$m\+VM.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classm_v_m_1_1_v_m_a044bf55966918537c0f9afb8c4c74331}{VM}} (int \texorpdfstring{$\ast$}{*}\+\_\+code, int code\+Length, int main, int data\+Size, const std\+::string \&o\+File\+Name)
+\begin{DoxyCompactList}\small\item\em This is the constructor for the \doxylink{classm_v_m_1_1_v_m}{VM} class. \end{DoxyCompactList}\item 
+\Hypertarget{classm_v_m_1_1_v_m_afd22a970a44757f4b53c8c77a8fa1e71}\label{classm_v_m_1_1_v_m_afd22a970a44757f4b53c8c77a8fa1e71} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+VM} ()
+\begin{DoxyCompactList}\small\item\em This is the destructor for the \doxylink{classm_v_m_1_1_v_m}{VM} class, which deletes the code array. \end{DoxyCompactList}\item 
+\Hypertarget{classm_v_m_1_1_v_m_aa4e8c25dbdce8ad9caf06d960eff37de}\label{classm_v_m_1_1_v_m_aa4e8c25dbdce8ad9caf06d960eff37de} 
+void {\bfseries cpu} ()
+\begin{DoxyCompactList}\small\item\em This function is the main CPU loop. \end{DoxyCompactList}\item 
+\Hypertarget{classm_v_m_1_1_v_m_af2dc16d4a2ceed57e1a5f413e47473cd}\label{classm_v_m_1_1_v_m_af2dc16d4a2ceed57e1a5f413e47473cd} 
+void {\bfseries execute} ()
+\begin{DoxyCompactList}\small\item\em This function executes the \doxylink{classm_v_m_1_1_v_m}{VM}. \end{DoxyCompactList}\item 
+\Hypertarget{classm_v_m_1_1_v_m_a2f2e5239d8261646f24d53942548fbed}\label{classm_v_m_1_1_v_m_a2f2e5239d8261646f24d53942548fbed} 
+void {\bfseries dump\+Stack} ()
+\begin{DoxyCompactList}\small\item\em This function dumps the stack. \end{DoxyCompactList}\item 
+\Hypertarget{classm_v_m_1_1_v_m_a3436a785acde6053591030859a5e3e9c}\label{classm_v_m_1_1_v_m_a3436a785acde6053591030859a5e3e9c} 
+void {\bfseries dump\+Data\+Mem} ()
+\begin{DoxyCompactList}\small\item\em This function dumps the data memory. \end{DoxyCompactList}\item 
+\Hypertarget{classm_v_m_1_1_v_m_a33f722e9588191d3668e45bb974f0f26}\label{classm_v_m_1_1_v_m_a33f722e9588191d3668e45bb974f0f26} 
+void {\bfseries dump\+Code\+Mem} ()
+\begin{DoxyCompactList}\small\item\em This function dumps the code memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classm_v_m_1_1_v_m_a4d83712196a31826a516e430c4bf489d}{disassemble}} (int ip, int opcode)
+\begin{DoxyCompactList}\small\item\em This function disassembles the code. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classm_v_m_1_1_v_m_a495494f2ea0a6ec6a6f4d41070990eaf}{handle\+Binary\+Op}} (std\+::function$<$ int(int, int)$>$ op)
+\begin{DoxyCompactList}\small\item\em This function handles binary operations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classm_v_m_1_1_v_m_a5b75e83031e3ed4fc67536117271c00d}{handle\+Brt\+Brf}} (int addr, bool cond, int \&ip, std\+::vector$<$ int $>$ \&stack, int \&sp)
+\begin{DoxyCompactList}\small\item\em The function handles the BRT and BRF instructions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classm_v_m_1_1_v_m_a3623f1aac98fb567bfbc5c92fbd73cae}{handle\+Print}} (int rvalue, std\+::ofstream \&fout, std\+::vector$<$ int $>$ \&stack, int \&sp)
+\begin{DoxyCompactList}\small\item\em The function handles the PRINT instruction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classm_v_m_1_1_v_m_aff6c89a7d7701b258ce54d3ea40b1174}{handle\+Call}} (int addr, int nargs, std\+::vector$<$ int $>$ \&stack, int \&sp, int \&fp, int \&ip, int \texorpdfstring{$\ast$}{*}code)
+\begin{DoxyCompactList}\small\item\em The function handles the CALL instruction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classm_v_m_1_1_v_m_a2ed2a30310209515588784c4ed1fc2c7}{handle\+Ret}} (int \&sp, int \&fp, int \&ip, std\+::vector$<$ int $>$ \&stack, int nargs)
+\begin{DoxyCompactList}\small\item\em The function handles the RET instruction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classm_v_m_1_1_v_m_aac40da27199c5d26eb98b44306db9f48}{handle\+Init}} (int addr, int nargs, std\+::vector$<$ int $>$ \&stack, int \&sp, int \&fp, int \&ip)
+\begin{DoxyCompactList}\small\item\em The function handles the INIT instruction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classm_v_m_1_1_v_m_aa42e76231c4aa211bd75de635a1c8d88}\label{classm_v_m_1_1_v_m_aa42e76231c4aa211bd75de635a1c8d88} 
+int \texorpdfstring{$\ast$}{*} {\bfseries code}
+\item 
+\Hypertarget{classm_v_m_1_1_v_m_aac33250e28735f23be582322fdc12083}\label{classm_v_m_1_1_v_m_aac33250e28735f23be582322fdc12083} 
+std\+::vector$<$ int $>$ {\bfseries stack}
+\item 
+\Hypertarget{classm_v_m_1_1_v_m_aac2e93784c1bab4f01464f5b0ddeaedc}\label{classm_v_m_1_1_v_m_aac2e93784c1bab4f01464f5b0ddeaedc} 
+std\+::vector$<$ int $>$ {\bfseries globals}
+\item 
+\Hypertarget{classm_v_m_1_1_v_m_abd2bc19c8115bde63bae5a0b290fd546}\label{classm_v_m_1_1_v_m_abd2bc19c8115bde63bae5a0b290fd546} 
+int {\bfseries ip}
+\item 
+\Hypertarget{classm_v_m_1_1_v_m_af35c960bf0ec49a29ae8167c3a0cdc59}\label{classm_v_m_1_1_v_m_af35c960bf0ec49a29ae8167c3a0cdc59} 
+int {\bfseries sp}
+\item 
+\Hypertarget{classm_v_m_1_1_v_m_a66e9f08bf79d64d5a61df4fdc586d41f}\label{classm_v_m_1_1_v_m_a66e9f08bf79d64d5a61df4fdc586d41f} 
+int {\bfseries fp}
+\item 
+\Hypertarget{classm_v_m_1_1_v_m_aeca5413424400c6892edb747e1eaedc7}\label{classm_v_m_1_1_v_m_aeca5413424400c6892edb747e1eaedc7} 
+int {\bfseries trace}
+\item 
+\Hypertarget{classm_v_m_1_1_v_m_a4b82cc5f1f9afe33abf91624ba1a540b}\label{classm_v_m_1_1_v_m_a4b82cc5f1f9afe33abf91624ba1a540b} 
+int {\bfseries array\+Size}
+\item 
+\Hypertarget{classm_v_m_1_1_v_m_af36d325cdb95cec1c43ef4fd28b6e495}\label{classm_v_m_1_1_v_m_af36d325cdb95cec1c43ef4fd28b6e495} 
+int {\bfseries number\+Of\+Globals}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for \doxylink{classm_v_m_1_1_v_m}{VM}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classm_v_m_1_1_v_m_a044bf55966918537c0f9afb8c4c74331}\label{classm_v_m_1_1_v_m_a044bf55966918537c0f9afb8c4c74331} 
+\index{mVM::VM@{mVM::VM}!VM@{VM}}
+\index{VM@{VM}!mVM::VM@{mVM::VM}}
+\doxysubsubsection{\texorpdfstring{VM()}{VM()}}
+{\footnotesize\ttfamily VM\+::\+VM (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{\+\_\+code,  }\item[{int}]{code\+Length,  }\item[{int}]{main,  }\item[{int}]{data\+Size,  }\item[{const std\+::string \&}]{o\+File\+Name }\end{DoxyParamCaption})}
+
+
+
+This is the constructor for the \doxylink{classm_v_m_1_1_v_m}{VM} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+code} & This is the code array \\
+\hline
+{\em code\+Length} & This is the length of the code array \\
+\hline
+{\em main} & This is the main function \\
+\hline
+{\em data\+Size} & This is the size of the data \\
+\hline
+{\em o\+File\+Name} & This is the output file name \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classm_v_m_1_1_v_m_a4d83712196a31826a516e430c4bf489d}\label{classm_v_m_1_1_v_m_a4d83712196a31826a516e430c4bf489d} 
+\index{mVM::VM@{mVM::VM}!disassemble@{disassemble}}
+\index{disassemble@{disassemble}!mVM::VM@{mVM::VM}}
+\doxysubsubsection{\texorpdfstring{disassemble()}{disassemble()}}
+{\footnotesize\ttfamily void VM\+::disassemble (\begin{DoxyParamCaption}\item[{int}]{ip,  }\item[{int}]{opcode }\end{DoxyParamCaption})}
+
+
+
+This function disassembles the code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip} & This is the instruction pointer \\
+\hline
+{\em opcode} & This is the opcode \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classm_v_m_1_1_v_m_a495494f2ea0a6ec6a6f4d41070990eaf}\label{classm_v_m_1_1_v_m_a495494f2ea0a6ec6a6f4d41070990eaf} 
+\index{mVM::VM@{mVM::VM}!handleBinaryOp@{handleBinaryOp}}
+\index{handleBinaryOp@{handleBinaryOp}!mVM::VM@{mVM::VM}}
+\doxysubsubsection{\texorpdfstring{handleBinaryOp()}{handleBinaryOp()}}
+{\footnotesize\ttfamily void VM\+::handle\+Binary\+Op (\begin{DoxyParamCaption}\item[{std\+::function$<$ int(int, int)$>$}]{op }\end{DoxyParamCaption})}
+
+
+
+This function handles binary operations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & This is the operation to be performed \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classm_v_m_1_1_v_m_a5b75e83031e3ed4fc67536117271c00d}\label{classm_v_m_1_1_v_m_a5b75e83031e3ed4fc67536117271c00d} 
+\index{mVM::VM@{mVM::VM}!handleBrtBrf@{handleBrtBrf}}
+\index{handleBrtBrf@{handleBrtBrf}!mVM::VM@{mVM::VM}}
+\doxysubsubsection{\texorpdfstring{handleBrtBrf()}{handleBrtBrf()}}
+{\footnotesize\ttfamily void VM\+::handle\+Brt\+Brf (\begin{DoxyParamCaption}\item[{int}]{addr,  }\item[{bool}]{cond,  }\item[{int \&}]{ip,  }\item[{std\+::vector$<$ int $>$ \&}]{stack,  }\item[{int \&}]{sp }\end{DoxyParamCaption})}
+
+
+
+The function handles the BRT and BRF instructions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & This is the address \\
+\hline
+{\em cond} & This is the condition \\
+\hline
+{\em ip} & Reference to the instruction pointer\+VM\+::handle\+Print \\
+\hline
+{\em stack} & Reference to the stack \\
+\hline
+{\em sp} & Reference to the stack pointer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classm_v_m_1_1_v_m_aff6c89a7d7701b258ce54d3ea40b1174}\label{classm_v_m_1_1_v_m_aff6c89a7d7701b258ce54d3ea40b1174} 
+\index{mVM::VM@{mVM::VM}!handleCall@{handleCall}}
+\index{handleCall@{handleCall}!mVM::VM@{mVM::VM}}
+\doxysubsubsection{\texorpdfstring{handleCall()}{handleCall()}}
+{\footnotesize\ttfamily void VM\+::handle\+Call (\begin{DoxyParamCaption}\item[{int}]{addr,  }\item[{int}]{nargs,  }\item[{std\+::vector$<$ int $>$ \&}]{stack,  }\item[{int \&}]{sp,  }\item[{int \&}]{fp,  }\item[{int \&}]{ip,  }\item[{int \texorpdfstring{$\ast$}{*}}]{code }\end{DoxyParamCaption})}
+
+
+
+The function handles the CALL instruction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & This is the address \\
+\hline
+{\em nargs} & This is the number of arguments \\
+\hline
+{\em stack} & Reference to the stack \\
+\hline
+{\em sp} & Reference to the stack pointer \\
+\hline
+{\em fp} & Reference to the frame pointer \\
+\hline
+{\em ip} & Reference to the instruction pointer \\
+\hline
+{\em code} & This is the code array pointer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classm_v_m_1_1_v_m_aac40da27199c5d26eb98b44306db9f48}\label{classm_v_m_1_1_v_m_aac40da27199c5d26eb98b44306db9f48} 
+\index{mVM::VM@{mVM::VM}!handleInit@{handleInit}}
+\index{handleInit@{handleInit}!mVM::VM@{mVM::VM}}
+\doxysubsubsection{\texorpdfstring{handleInit()}{handleInit()}}
+{\footnotesize\ttfamily void VM\+::handle\+Init (\begin{DoxyParamCaption}\item[{int}]{addr,  }\item[{int}]{nargs,  }\item[{std\+::vector$<$ int $>$ \&}]{stack,  }\item[{int \&}]{sp,  }\item[{int \&}]{fp,  }\item[{int \&}]{ip }\end{DoxyParamCaption})}
+
+
+
+The function handles the INIT instruction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & This is the address \\
+\hline
+{\em nargs} & This is the number of arguments \\
+\hline
+{\em stack} & Reference to the stack \\
+\hline
+{\em sp} & Reference to the stack pointer \\
+\hline
+{\em fp} & Reference to the frame pointer \\
+\hline
+{\em ip} & Reference to the instruction pointer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classm_v_m_1_1_v_m_a3623f1aac98fb567bfbc5c92fbd73cae}\label{classm_v_m_1_1_v_m_a3623f1aac98fb567bfbc5c92fbd73cae} 
+\index{mVM::VM@{mVM::VM}!handlePrint@{handlePrint}}
+\index{handlePrint@{handlePrint}!mVM::VM@{mVM::VM}}
+\doxysubsubsection{\texorpdfstring{handlePrint()}{handlePrint()}}
+{\footnotesize\ttfamily void VM\+::handle\+Print (\begin{DoxyParamCaption}\item[{int}]{rvalue,  }\item[{std\+::ofstream \&}]{fout,  }\item[{std\+::vector$<$ int $>$ \&}]{stack,  }\item[{int \&}]{sp }\end{DoxyParamCaption})}
+
+
+
+The function handles the PRINT instruction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rvalue} & This is the right value \\
+\hline
+{\em fout} & Reference to the output file stream \\
+\hline
+{\em stack} & Reference to the stack \\
+\hline
+{\em sp} & Reference to the stack pointer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classm_v_m_1_1_v_m_a2ed2a30310209515588784c4ed1fc2c7}\label{classm_v_m_1_1_v_m_a2ed2a30310209515588784c4ed1fc2c7} 
+\index{mVM::VM@{mVM::VM}!handleRet@{handleRet}}
+\index{handleRet@{handleRet}!mVM::VM@{mVM::VM}}
+\doxysubsubsection{\texorpdfstring{handleRet()}{handleRet()}}
+{\footnotesize\ttfamily void VM\+::handle\+Ret (\begin{DoxyParamCaption}\item[{int \&}]{sp,  }\item[{int \&}]{fp,  }\item[{int \&}]{ip,  }\item[{std\+::vector$<$ int $>$ \&}]{stack,  }\item[{int}]{nargs }\end{DoxyParamCaption})}
+
+
+
+The function handles the RET instruction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sp} & Reference to the stack pointer \\
+\hline
+{\em fp} & Reference to the frame pointer \\
+\hline
+{\em ip} & Reference to the instruction pointer \\
+\hline
+{\em stack} & Reference to the stack \\
+\hline
+{\em nargs} & This is the number of arguments \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Adrian/\+Documents/git/m\+VM/src/include/m\+VM.\+h\item 
+C\+:/\+Users/\+Adrian/\+Documents/git/m\+VM/src/m\+VM.\+cpp\end{DoxyCompactItemize}
