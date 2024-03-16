@@ -1,3 +1,13 @@
+/**
+ * @file macroBase.h
+ * @author Adrian Goessl
+ * @brief This is the header file for the macro base
+ * @version 0.1
+ * @date 2024-03-16
+ * 
+ * @copyright MIT 2024
+ * 
+ */
 #ifndef MACROBASE_H
 #define MACROBASE_H
 

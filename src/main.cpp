@@ -1,3 +1,13 @@
+/**
+ * @file main.cpp
+ * @author Adrian Goessl
+ * @brief This is the main file for the micro Virtual Machine
+ * @version 0.1
+ * @date 2024-03-16
+ * 
+ * @copyright MIT 2024
+ * 
+ */
 #include <memory>
 #include <chrono>
 

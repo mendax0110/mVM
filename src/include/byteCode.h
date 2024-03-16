@@ -1,3 +1,13 @@
+/**
+ * @file byteCode.h
+ * @author Adrian Goessl
+ * @brief This is the header file for the ByteCode
+ * @version 0.1
+ * @date 2024-03-16
+ * 
+ * @copyright MIT 2024
+ * 
+ */
 #ifndef BYTECODE_H
 #define BYTECODE_H
 
@@ -15,7 +25,6 @@ namespace ByteCodeInternals
     {
     public:
         ByteCode() = default;
-        //~ByteCode() = default;
 
         static constexpr int NUM_OPCODES = 20;
         static std::array<const char*, NUM_OPCODES> opName;

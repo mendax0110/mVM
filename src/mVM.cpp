@@ -1,3 +1,13 @@
+/**
+ * @file mVM.cpp
+ * @author Adrian Goessl
+ * @brief This is the micro virtual machine implementation file
+ * @version 0.1
+ * @date 2024-03-16
+ * 
+ * @copyright MIT 2024
+ * 
+ */
 #include "../src/include/mVM.h"
 #include "../src/include/parser.h"
 #include "../src/include/byteCode.h"

@@ -1,3 +1,13 @@
+/**
+ * @file mVM.h
+ * @author Adrian Goessl
+ * @brief This is the header file for the micro Virtual Machine
+ * @version 0.1
+ * @date 2024-03-16
+ * 
+ * @copyright MIT 2024
+ * 
+ */
 #ifndef MVM_H
 #define MVM_H
 
