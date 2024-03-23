@@ -37,7 +37,7 @@ VM::VM(int* _code, int codeLength, int main, int dataSize, const string& oFileNa
 /// @brief This is the destructor for the VM class, which deletes the code array
 VM::~VM()
 {
-    delete[] code;
+    //delete[] code;
 }
 
 /// @brief This function handles binary operations
@@ -157,13 +157,13 @@ void VM::cpu()
         }
     }
 
-    int opcode = code[ip];
+    int opcode = code[ip]; // why is pointer using wrong indexs?
 
-    while (opcode != ByteCode::HALT && ip < arraySize) 
+    while (opcode != ByteCode::HALT && ip < arraySize)
     {
         if (trace == 1) 
         {
-            disassemble(ip, opcode);
+            //disassemble(ip, opcode);
         }
 
         ip++;
@@ -244,7 +244,7 @@ void VM::cpu()
 
     if (trace == 1) 
     {
-        disassemble(ip, code[ip]);
+        //disassemble(ip, code[ip]);
         dumpStack();
         dumpDataMem();
     }
@@ -290,8 +290,10 @@ void VM::disassemble(int ip, int opcode)
 {
     cout << "Opcode: " << opcode << endl;
 
-    const char *instr = ByteCode::opName[opcode];
-    int nops = ByteCode::operands[opcode];
+    //auto instr = ByteCode::opName[opcode];
+    auto instr = reinterpret_cast<const array<const char*, ByteCode::NUM_OPCODES>&>(ByteCode::opName)[opcode];
+    //auto nops = ByteCode::operands[opcode];
+    auto nops = reinterpret_cast<const array<int, ByteCode::NUM_OPCODES>&>(ByteCode::operands)[opcode];
     ostream& out = fout.is_open() ? fout : cout;
 
     out << setfill('0') << setw(4) << ip << ": " << setw(6) << instr;

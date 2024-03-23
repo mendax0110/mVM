@@ -31,7 +31,7 @@ array<int, ByteCode::NUM_OPCODES> ByteCode::operands = {
 /// @brief This is the constructor for the Parser class
 /// @param ifilename Reference to the input file name
 Parser::Parser(const string& ifilename)
-    : infilename(ifilename), iaddr(0), szToken(0), token()
+     : infilename(ifilename), iaddr(0), szToken(0), token()
 {
     fin.open(infilename);
 
@@ -50,11 +50,18 @@ Parser::Parser(const string& ifilename)
 /// @return Will return the opcode
 int Parser::find(const string& opstr)
 {
-    for (int i = 0; i < ByteCodeInternals::ByteCode::opName.size(); i++) 
+    for (auto i = 0; i < ByteCodeInternals::ByteCode::opName.size(); i++)
     {
-        if (lowercase(opstr) == lowercase(ByteCodeInternals::ByteCode::opName[i])) 
+        if (i == 0)
         {
-            return i;   // TODO: fix this exception
+			continue;
+		}
+
+        cout << "opstr: " << opstr << " ByteCode::opName[i]: " << ByteCodeInternals::ByteCode::opName[i] << endl;
+
+        if (lowercase(opstr) == lowercase(ByteCodeInternals::ByteCode::opName[i]))
+        {
+            return i;
         }
     }
 
@@ -70,7 +77,14 @@ string Parser::lowercase(const string& opstring)
 
     for (auto c : opstring) 
     {
+        cout << "c: " << c << endl;
         lower += tolower(c);
+        cout << "lower: " << lower.back() << endl;
+    }
+
+    while (!lower.empty() && ispunct(lower.back()))
+    {
+        lower.pop_back();
     }
 
     return lower;
